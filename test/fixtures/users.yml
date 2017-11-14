@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user:
+  username: member1
+  email: member1@clubhouse.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+  remember_digest: nil
+  last_login: 2017-11-14 09:14:21
