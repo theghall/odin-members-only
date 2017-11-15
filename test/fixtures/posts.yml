@@ -1,0 +1,6 @@
+
+first:
+  title: 'My First Post'
+  body: 'I am here!'
+  flagged: false
+  user: user
