@@ -2,11 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:user)
-  end
-
-  test "should be valid" do
-    assert @user.valid?
+    @user = users(:member1)
   end
 
   test "should not allow blank username" do

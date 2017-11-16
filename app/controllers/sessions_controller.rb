@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
 
     log_in(login_params[:username], login_params[:password])
 
-    if !user_logged_in?
+    if user_logged_in?
+      redirect_to root_url
+    else
       flash.now[:alert] = 'Invalid username/password combination'
 
       render 'new'
@@ -18,6 +20,8 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
+
+    redirect_to root_url
   end
 
   private

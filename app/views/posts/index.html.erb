@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+<% if @posts %>
+  <% @posts.each do |p| %>
+    <div class='post'>
+    <p>Title: <%= p.title %></p>
+    <p>By: <%= member_or_hidden(p) %> On: <%= p.created_at %></p>
+    <p><%= p.body %></p>
+    <% if !p.flagged %>
+      <%= form_for(:post, url: post_path(p), method: :patch) do |f| %>
+        <%= f.hidden_field :flagged, value: 'true' %>
+        <%= f.submit 'Report Post' %>
+      <% end %>
+    <% else %>
+      <p>This post has been flagged for review.</p>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>
+<%= button_to('Add post', new_post_path, method: :get) if user_logged_in? =%>

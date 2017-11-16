@@ -1,0 +1,13 @@
+<h1>Add a post</h1>
+<%= render 'shared/errors' %>
+<%= form_for(@post) do |f| %>
+<p>
+<%= f.label 'Title' %>
+<%= f.text_field :title, autofocus: true, placeholder: 'Enter a title...' %>
+<p>
+</p>
+<%= f.label 'Body' %>
+<%= f.text_area :body, placeholder: 'Compose a new post..' %>
+</p>
+<%= f.submit 'Submit' %>
+<% end %>

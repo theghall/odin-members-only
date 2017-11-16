@@ -14,8 +14,8 @@ module SessionsHelper
   end
 
   def log_out
-    user = User.find_by(id: session[:user_id])
     cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 
   def current_user

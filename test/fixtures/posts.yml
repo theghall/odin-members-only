@@ -3,4 +3,23 @@ first:
   title: 'My First Post'
   body: 'I am here!'
   flagged: false
-  user: user
+  user: member1
+
+second:
+  title: 'My next Post'
+  body: 'I am here!'
+  flagged: false
+  user: member1
+
+
+third:
+  title: 'Frank is in the house'
+  body: 'I am here!'
+  flagged: false
+  user: frank
+
+fourth:
+  title: 'Frankly Frank'
+  body: 'I am here!'
+  flagged: false
+  user: frank

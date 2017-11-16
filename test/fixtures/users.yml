@@ -1,7 +1,22 @@
 
-user:
+member1:
   username: member1
   email: member1@clubhouse.com
   password_digest: <%= BCrypt::Password.create('password') %>
   remember_digest: nil
   last_login: 2017-11-14 09:14:21
+
+frank:
+  username: frank
+  email: frank@clubhouse.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+  remember_digest: nil
+  last_login: 2017-11-14 09:14:21
+
+peter:
+  username: peter
+  email: peter@clubhouse.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+  remember_digest: nil
+  last_login: 2017-11-14 09:14:21
+

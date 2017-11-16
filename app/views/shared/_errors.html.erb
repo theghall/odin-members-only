@@ -1,0 +1,10 @@
+<div id=post-errors>
+<% if @post.errors.any? %>
+  <%= 'This form has the following errors:' %>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+</div>
