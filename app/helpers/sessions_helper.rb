@@ -10,7 +10,7 @@ module SessionsHelper
   end
 
   def user_logged_in?
-    logged_in = cookies[:user_id]
+    logged_in = current_user
   end
 
   def log_out
@@ -20,7 +20,11 @@ module SessionsHelper
 
   def current_user
     if (user_id = cookies[:user_id])
-      @current_user ||= User.find_by(id: user_id)
+      remember_token = cookies[:remember_token]
+
+      user = User.find_by(id: user_id)
+
+      @current_user = user if user.remembered?(remember_token)
     end
   end
 end

@@ -13,6 +13,10 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
+  def remembered?(token)
+    self.remember_digest == Digest::SHA1.hexdigest(token.to_s)
+  end
+
   def remember
     set_token
     update_attribute(:remember_digest, Digest::SHA1.hexdigest(remember_token.to_s))
